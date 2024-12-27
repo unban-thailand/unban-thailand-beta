@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&family=Mitr:wght@200;300;400;500;600;700&display=swap');
+/* ตั้งค่าขนาดหน้าจอ */
+body,html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Mitr", serif;
+}
+
+/* วิดีโอพื้นหลัง */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#bgVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    filter: blur(10px); /* เพิ่มความเบลอ */
+}
+
+/* เนื้อหา */
+.content {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    color: white;
+}
+
+/* สไตล์ข้อความ */
+.content h1 {
+    font-size: 2.5rem; /* ขนาดข้อความ */
+    margin-bottom: 20px;
+}
+
+/* ปุ่มใหญ่ */
+.big-button {
+    display: inline-block;
+    width: 100%; /* ให้ปุ่มยาวเต็มพื้นที่ */
+    max-width: 400px; /* กำหนดความกว้างสูงสุด */
+    padding: 20px;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: #007BFF; /* สีพื้นหลัง */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.big-button:hover {
+    background-color: #0056b3; /* สีเมื่อ hover */
+    transform: scale(1.05); /* ขยายเล็กน้อย */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2rem;
+    }
+
+    .big-button {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 1.5rem;
+    }
+
+    .big-button {
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+.electric-button {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: linear-gradient(45deg, #00d4ff, #0066ff);
+    border: 2px solid #00d4ff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.8), 0 0 30px rgba(0, 102, 255, 0.6);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* เอฟเฟกต์ตอน Hover */
+.electric-button:hover {
+    background: linear-gradient(45deg, #0066ff, #00d4ff);
+    color: #fff;
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 1), 0 0 60px rgba(0, 102, 255, 0.8);
+}
+
+/* เอฟเฟกต์ Glow */
+.electric-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.4), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 10px;
+}
+
+.electric-button:hover::before {
+    opacity: 1;
+}
+
+/* เอฟเฟกต์แสงตอนกด */
+.electric-button:active {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 1), 0 0 50px rgba(0, 102, 255, 0.9);
+}
